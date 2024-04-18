@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Compose Business Card App</string>
+    <string name="full_name">Frederick Choe</string>
+    <string name="job_title">Software Engineer</string>
+    <string name="phone_number">+11 (123) 444 555 666</string>
+    <string name="handle">\@AndroidDev</string>
+    <string name="email">fred.choe@android.com</string>
+</resources>
