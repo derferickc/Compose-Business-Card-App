@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.platform.InspectableModifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -128,79 +129,76 @@ fun ComposeInfoCard(
     modifier: Modifier = Modifier
 ) {
     Column(
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-        modifier = modifier
-            .fillMaxWidth()
     ) {
         Row(
-            modifier = modifier
-
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.baseline_call_black_24dp),
-                    contentDescription ="phone icon",
-                    modifier = Modifier
-                        .size(18.dp)
-                )
-            }
-            Column(
-                modifier = modifier,
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                Text(
-                    text = number,
-                    fontSize = 10.sp,
-                    textAlign = TextAlign.Left
-                )
-            }
+            Image(
+                painter = painterResource(R.drawable.baseline_call_black_24dp),
+                contentDescription ="phone icon",
+                alignment = Alignment.TopEnd,
+                modifier = Modifier
+                    .size(18.dp)
+                    .weight(2f)
+                    .padding(end = 10.dp)
+            )
+            Text(
+                text = number,
+                fontSize = 10.sp,
+                textAlign = TextAlign.Left,
+                modifier = Modifier
+                    .weight(3f)
+            )
         }
 
-        Row {
-            Column(
-                modifier = modifier,
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.baseline_share_black_24dp),
-                    contentDescription ="handle icon",
-                    modifier = Modifier
-                        .size(18.dp)
-                )
-            }
-            Column(
-                modifier = modifier,
-            ) {
-                Text(
-                    text = handle,
-                    fontSize = 10.sp,
-                    textAlign = TextAlign.Left
-                )
-            }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Image(
+                painter = painterResource(R.drawable.baseline_share_black_24dp),
+                contentDescription ="handle icon",
+                alignment = Alignment.TopEnd,
+                modifier = Modifier
+                    .size(18.dp)
+                    .weight(2f)
+                    .padding(end = 10.dp)
+            )
+            Text(
+                text = handle,
+                fontSize = 10.sp,
+                textAlign = TextAlign.Left,
+                modifier = Modifier
+                    .weight(3f)
+            )
         }
 
-        Row {
-            Column(
-                modifier = modifier,
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.baseline_email_black_24dp),
-                    contentDescription ="email icon",
-                    modifier = Modifier
-                        .size(18.dp)
-                )
-            }
-            Column(
-                modifier = modifier,
-            ) {
-                Text(
-                    text = email,
-                    fontSize = 10.sp,
-                )
-            }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Image(
+                painter = painterResource(R.drawable.baseline_email_black_24dp),
+                contentDescription ="email icon",
+                alignment = Alignment.TopEnd,
+                modifier = Modifier
+                    .size(18.dp)
+                    .weight(2f)
+                    .padding(end = 10.dp)
+            )
+            Text(
+                text = email,
+                fontSize = 10.sp,
+                textAlign = TextAlign.Left,
+                modifier = Modifier
+                    .weight(3f)
+            )
         }
     }
 }
